@@ -28,12 +28,16 @@ then
   echo "Commiting and pushing changes..."
   # Calling method to configure the git environemnt
   git_setup
+  echo "Finished git_setup."
   # Switch to the actual branch
   git checkout $INPUT_BRANCH
+  echo "Checked out... $INPUT_BRANCH"
   # Add changes to git
   git add "${INPUT_FILE_PATTERN}"
+  echo "Staged changes"
   # Commit and push changes back
   git commit -m "$INPUT_COMMIT_MESSAGE" --author="$GITHUB_ACTOR <$GITHUB_ACTOR@users.noreply.github.com>" ${INPUT_COMMIT_OPTIONS:+"$INPUT_COMMIT_OPTIONS"}
+  echo "Committed staged changes"
   git push --set-upstream origin "HEAD:$INPUT_BRANCH"
   echo "Changes pushed successfully."
 else
