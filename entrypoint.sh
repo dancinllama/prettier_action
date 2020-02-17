@@ -33,7 +33,7 @@ then
   echo "Finished git_setup."
   
   # Switch to the actual branch
-  git checkout $INPUT_BRANCH:11
+  git checkout "${INPUT_BRANCH:11}"
   # Add changes to git
   git add "${INPUT_FILE_PATTERN}"
   echo "Staged changes"
