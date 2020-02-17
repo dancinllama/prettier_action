@@ -26,7 +26,7 @@ prettier $INPUT_PRETTIER_OPTIONS || echo "Problem while prettifying your files!"
 
 if ! git diff --quiet
 then
-  echo "Commiting and pushing changes..."
+  echo "Commiting and pushing changes...11111111"
   # Calling method to configure the git environemnt
   git_setup
   echo "After git setup... $INPUT_BRANCH"
