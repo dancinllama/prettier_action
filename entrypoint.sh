@@ -4,6 +4,7 @@ set -eux
 
 # Function for setting up git env in the docker container (copied from https://github.com/stefanzweifel/git-auto-commit-action/blob/master/entrypoint.sh)
 git_setup ( ) {
+   echo "In get setup"
   cat <<- EOF > $HOME/.netrc
         machine github.com
         login $GITHUB_ACTOR
@@ -12,10 +13,14 @@ git_setup ( ) {
         login $GITHUB_ACTOR
         password $GITHUB_TOKEN
 EOF
+ echo "After EOF in get setup"
     chmod 600 $HOME/.netrc
+     echo "After chmod"
 
     git config --global user.email "actions@github.com"
+     echo "After git config 1"
     git config --global user.name "GitHub Actions"
+    echo "After git config 2"
 }
 
 echo "Installing prettier..."
@@ -27,8 +32,11 @@ if ! git diff --quiet
 then
   echo "Commiting and pushing changes..."
   # Calling method to configure the git environemnt
+  echo "Before git setup... $INPUT_BRANCH"
   git_setup
+  echo "After git setup... $INPUT_BRANCH"
   echo "Finished git_setup."
+  
   # Switch to the actual branch
   git checkout $INPUT_BRANCH
   echo "Checked out... $INPUT_BRANCH"
