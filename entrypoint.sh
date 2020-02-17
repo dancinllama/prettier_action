@@ -20,6 +20,7 @@ EOF
     git config --global user.email "actions@github.com"
      echo "After git config 1"
     git config --global user.name "GitHub Actions"
+    git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
     echo "After git config 2"
 }
 
