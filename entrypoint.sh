@@ -39,6 +39,8 @@ _git_push() {
 echo "Installing prettier..."
 npm install prettier prettier-plugin-apex @prettier/plugin-xml
 
+echo "JAVAHOME: $JAVA_HOME"
+
 echo "Prettifing files..."
 prettier $INPUT_PRETTIER_OPTIONS || echo "Problem while prettifying your files with options $INPUT_PRETTIER_OPTIONS"
 
