@@ -37,7 +37,7 @@ _git_push() {
 
 # PROGRAM
 echo "Installing prettier..."
-npm install --silent --global prettier prettier-plugin-apex @prettier/plugin-xml
+npm install --silent --global prettier  @prettier/plugin-xml dancinllama/prettier-plugin-apex#master
 
 echo "JAVAHOME: $JAVA_HOME"
 
