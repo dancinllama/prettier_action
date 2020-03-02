@@ -37,7 +37,7 @@ _git_push() {
 
 # PROGRAM
 echo "Installing prettier..."
-npm install --silent --global --save-dev prettier prettier-plugin-apex @prettier/plugin-xml
+npm install prettier prettier-plugin-apex @prettier/plugin-xml
 
 echo "Prettifing files..."
 prettier $INPUT_PRETTIER_OPTIONS || echo "Problem while prettifying your files with options $INPUT_PRETTIER_OPTIONS"
